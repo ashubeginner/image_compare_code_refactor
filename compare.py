@@ -17,10 +17,11 @@ from jira import JIRA, JIRAError
 from skimage.measure import compare_ssim
 from skimage.feature import match_template
 from sys import platform
-
 debug = False
 
-def compare(folder, datum_image="imageB.png", latest_image="imageA.png", masked_datum="imageB_masked.png"):
+
+def compare(folder, datum_image="imageB.png", latest_image="imageA.png",
+            masked_datum="imageB_masked.png"):
 
     datum_image, gray_datum_image, latest_image, gray_latest_image = preprocess_images(folder=folder,
                                                                                        datum_image=datum_image,
@@ -277,7 +278,7 @@ def intersecting(r1_bottom_left, r1_top_right, r2_bottom_left, r2_top_right):
     return ((between(lower=x_lower, upper=x_upper, datum=r2_bottom_left[0])
             or between(lower=x_lower, upper=x_upper, datum=r2_top_right[0]))
             and between(lower=y_lower, upper=y_upper, datum=r2_bottom_left[1])
-                or between(lower=y_lower, upper=y_upper, datum=r2_top_right[1]))
+            or between(lower=y_lower, upper=y_upper, datum=r2_top_right[1]))
 
 
 def intersecting_squares(r1_bottom_left, r1_top_right, r2_bottom_left, r2_top_right):
