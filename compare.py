@@ -4,7 +4,8 @@ import cv2
 import imutils
 import itertools
 import json
-#import logging
+import logging
+from logging import DEBUG, INFO, ERROR
 import numpy as np
 import os
 import pickle
@@ -19,9 +20,6 @@ from skimage.feature import match_template
 from sys import platform
 
 debug = False
-
-import logging
-from logging import DEBUG, INFO, ERROR
 
 server='https://xxxxxxx.atlassian.net'
 jira_user_name = 'username@example.com'
